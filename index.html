@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	 
+	<title>项目 1　</title>
+	
+
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		
+		.sidebar_head {
+			width: 100%;
+			height: 100px;
+			background-color: 	red;
+			position: 	fixed;	
+			top: 	0px;
+			left: 	0px;
+		}
+		.sidebar_head2 {
+			width: 	100%;
+			height: 	200px;
+			background-color: 	green;
+			margin-top: 	100px;
+		}
+		.sidebar_left {
+			width: 15%;
+			height: 770px;
+			top: 0;
+			bottom: 0;
+		
+			float: left;
+			
+			margin-left: 10%;
+		
+			border: 1px solid grey;
+			box-shadow: 4px 6px 6px #333333; 
+			overflow-y: auto;
+			overflow-x: auto;
+
+		}
+		.sidebar_right {
+			width: 70%;
+			height: 2000px;
+			background-color: blue;
+			float: right;
+			
+		}
+		.sidebar_title {
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+		}
+		.sidebar_content {
+			margin-left: 30px;
+		}
+		.sidebar_content div {
+			
+			margin-bottom: 10px;
+			margin-top: 10px;
+			
+		}
+		.sidebar_content>div>div {
+		
+			display: none;
+			
+		}
+		.sidebar_content>div>div>div {
+			
+			display: none;
+		}
+		b {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background-color: grey;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 18px;
+			color: #fff;
+			margin-right: 10px;
+		
+		}
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		.sidebar_foot {
+			width: 	100%;
+			height: 	100px;
+			background-color: 	red;
+		}
+		.a0,.a1,.a2,.a3 {
+			padding-left: 18px;
+			background-position: 0px 3px;
+			background-size: 18px auto;
+			background-attachment: fixed;
+			position: relative;
+
+		}
+		.b{
+			padding-left: 18px;
+			position: relative;
+		}
+		.c{
+			padding-left: 18px;
+		}
+		.bb {
+			padding-left: 18px;
+			background: url() no-repeat 0 0;
+		}
+		
+		.aa {
+			padding-left: 18px;
+			background: url() no-repeat 0 0;
+		}
+		#xialab {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 18px;
+			height: 24px;
+			/*background-color: red;*/
+		}
+		div[aaa="aaa"]{
+			padding-left: 18px;
+			background-position: 0px 3px;
+			background-size: 18px auto;
+			background-attachment: fixed;
+			position: relative;
+		}
+	</style>
+	<script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(window).ready(function () {
+
+    		var winxin_img="images";
+		    $(document).scroll(function () {
+       
+      			    if($(document).scrollTop()>200){
+        		
+        				$(".sidebar_left").css({"position":"fixed","top":"100px"})
+        		}else {
+        			$(".sidebar_left").css({"position":"static"})
+        		}
+    		});
+           
+            //  var arr=[
+	           // 			["S1-1",
+	           // 				[
+		          //  				["S2-1","#"],
+		          //  				["S2-2","#"],
+		          //  				["S2-3","#"],
+	           // 				]
+	           // 			],
+           	// 			["S1-2","#"],
+	           // 			["S1-3",
+	           // 				[
+	           // 				    ["S2-1",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ]
+	           // 				]
+	           // 			],
+	           // 			["S1-3",
+	           // 				[
+	           // 				    ["S2-1",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ],
+	           // 				    ["S2-2",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ],
+	           // 				    ["S2-3",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ]	
+	           // 				]
+	           // 			],
+	           // 			["S1-3",
+	           // 				[
+	           // 				    ["S2-1",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ],
+	           // 				    ["S2-2",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ],
+	           // 				    ["S2-3",
+	           // 				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           // 				    ]	
+	           // 				]
+	           // 			]
+           			
+            // ];
+            var arr=[
+	           			["S1-1",
+	           				[
+		           				["S2-1","#"],
+		           				["S2-2","#"],
+		           				["S2-3","#"],
+	           				]
+	           			],
+           				["S1-2","#"],
+	           			["S1-3",
+	           				[
+	           				    ["S2-1",
+	           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+	           				    ],
+	           				]
+	           			],
+	           			["S1-3",
+		           				[
+		           				    ["S2-1",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-2",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-3",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ]	
+		           				]
+		           		],
+	           			["S1-3",
+		           				[
+		           				    ["S2-1",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-2",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-3",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ]	
+		           				]
+		           		],
+	           			["S1-3",
+		           				[
+		           				    ["S2-1",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-2",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-3",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ]	
+		           				]
+		           		],
+	           			["S1-3",
+		           				[
+		           				    ["S2-1",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-2",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ],
+		           				    ["S2-3",
+		           				    	[["S3-1","#"],["S3-2","#"],["S3-3","#"]]
+		           				    ]	
+		           				]
+		           		]
+            ];
+            	
+          	arr = [['语音', [['语音', [['音标、音节、音素', '?knowledges=2000001'], ['字母的书写', '?knowledges=2000002'], ['字母本身的读音', '?knowledges=2000003'], ['字母在单词中的读音', '?knowledges=2000004'], ['字母组合的读音', '?knowledges=2000005']]]]], ['词法', [['名词', [['不可数名词', '?knowledges=2000007'], ['名词所有格', '?knowledges=2000008'], ['专有名词', '?knowledges=2000009'], ['普通名词', '?knowledges=2000010'], ['名词辨析', '?knowledges=2000011'], ['可数名词和单复数', '?knowledges=2000006']]], ['代词', [['物主代词', '?knowledges=2000012'], ['反身代词', '?knowledges=2000013'], ['指示代词', '?knowledges=2000014'], ['不定代词', '?knowledges=2000015'], ['人称代词', '?knowledges=2000016'], ['疑问代词', '?knowledges=2000017'], ['关系代词', '?knowledges=2000018'], ['相互代词', '?knowledges=2000019'], ['代词辨析', '?knowledges=2000020']]], ['形容词', [['形容词的位置', '?knowledges=2000021'], ['形容词的用法', '?knowledges=2000022'], ['形容词比较级和最高级', '?knowledges=2000023'], ['ing形容词和ed形容词', '?knowledges=2000024'], ['形容词辨析', '?knowledges=2000025']]], ['副词', [['副词辨析', '?knowledges=2000026'], ['副词的分类', '?knowledges=2000027'], ['副词的比较级和最高级', '?knowledges=2000028'], ['副词的用法', '?knowledges=2000181'], ['(频度)副词的位置', '?knowledges=2000190']]], ['冠词', [['不定冠词', '?knowledges=2000029'], ['定冠词', '?knowledges=2000030'], ['零冠词', '?knowledges=2000031']]], ['动词的时态', [['动词的一般现在时', '?knowledges=2000032'], ['动词的一般过去时', '?knowledges=2000033'], ['动词的一般将来时', '?knowledges=2000034'], ['动词的现在进行时', '?knowledges=2000035'], ['动词的过去进行时', '?knowledges=2000036'], ['动词的现在完成时', '?knowledges=2000037'], ['动词的过去完成时', '?knowledges=2000038'], ['动词的过去将来时', '?knowledges=2000039'], ['动词的现在完成进行时', '?knowledges=2000040']]], ['动词的语态', [['动词的被动语态', '?knowledges=2000041'], ['动词的虚拟语气', '?knowledges=2000042']]], ['非谓语动词', [['动词不定式', '?knowledges=2000043'], ['分词', '?knowledges=2000044'], ['动名词', '?knowledges=2000045']]], ['动词的特殊用法', [['动词的基本形式', '?knowledges=2000046'], ['动词辨析', '?knowledges=2000047'], ['系动词', '?knowledges=2000048'], ['助动词', '?knowledges=2000049'], ['情态动词', '?knowledges=2000050'], ['动词短语辨析', '?knowledges=2000051'], ['行为动词的及物性和不及物性', '?knowledges=2000052'], ['固定搭配', '?knowledges=2000180'], ['词义辨析', '?knowledges=2000182'], ['词性辨析', '?knowledges=2000185']]], ['数词', [['基数词', '?knowledges=2000053'], ['序数词', '?knowledges=2000054'], ['量词', '?knowledges=2000055']]], ['介词', [['介词', '?knowledges=2000056'], ['介词短语', '?knowledges=2000057'], ['介词辨析', '?knowledges=2000197']]], ['连词', [['连词', '?knowledges=2000058'], ['连词辨析', '?knowledges=2000199']]], ['感叹词', [['感叹词', '?knowledges=2000059']]], ['构词法', [['派生法', '?knowledges=2000060'], ['转化法', '?knowledges=2000061'], ['合成法', '?knowledges=2000062'], ['缩写和简写', '?knowledges=2000063']]]]], ['句法', [['句子', [['句子的成分', '?knowledges=2000064'], ['基本句型', '?knowledges=2000065'], ['否定句', '?knowledges=2000198']]], ['句子的种类', [['陈述句', '?knowledges=2000066'], ['疑问句', '?knowledges=2000067'], ['祈使句', '?knowledges=2000068'], ['感叹句', '?knowledges=2000069']]], ['句子的结构', [['简单句', '?knowledges=2000070'], ['复合句', '?knowledges=2000071'], ['并列句', '?knowledges=2000072']]], ['主谓一致', [['语法一致原则', '?knowledges=2000073'], ['意义一致原则', '?knowledges=2000074'], ['就近一致原则', '?knowledges=2000075']]], ['特殊句式', [['倒装句', '?knowledges=2000076'], ['强调句', '?knowledges=2000077'], ['省略句', '?knowledges=2000078'], ['there be 句型', '?knowledges=2000079'], ['it的用法', '?knowledges=2000183'], ['反义疑问句', '?knowledges=2000186'], ['一般疑问句的回答', '?knowledges=2000189']]], ['直接引语和间接引语', [['直接引语和间接引语', '?knowledges=2000080']]], ['状语从句', [['时间状语从句', '?knowledges=2000081'], ['地点状语从句', '?knowledges=2000082'], ['原因状语从句', '?knowledges=2000083'], ['目的状语从句', '?knowledges=2000084'], ['结果状语从句', '?knowledges=2000085'], ['条件状语从句', '?knowledges=2000086'], ['让步状语从句', '?knowledges=2000087'], ['比较状语从句', '?knowledges=2000088'], ['方式状语从句', '?knowledges=2000089']]], ['定语从句', [['非限制性定语从句', '?knowledges=2000090'], ['限制性定语从句', '?knowledges=2000091'], ['定语从句的先行词', '?knowledges=2000092'], ['关系代词的用法', '?knowledges=2000093'], ['关系副词的用法', '?knowledges=2000094']]], ['宾语从句', [['宾语从句的连接词', '?knowledges=2000095'], ['宾语从句的时态', '?knowledges=2000096'], ['宾语从句的语序', '?knowledges=2000097']]]]], ['阅读理解', [['体裁', [['记叙文', '?knowledges=2000098'], ['应用文', '?knowledges=2000099'], ['说明文', '?knowledges=2000100'], ['议论文', '?knowledges=2000101'], ['夹叙夹议文', '?knowledges=2000102'], ['其他体裁', '?knowledges=2000103']]], ['题材', [['日常生活类', '?knowledges=2000104'], ['人生感悟类', '?knowledges=2000105'], ['科普环保类', '?knowledges=2000106'], ['政治经济类', '?knowledges=2000107'], ['人物传记/故事阅读类', '?knowledges=2000108'], ['教育科学类', '?knowledges=2000109'], ['广告布告类', '?knowledges=2000110'], ['健康环保类', '?knowledges=2000111'], ['社会现象类', '?knowledges=2000112'], ['新闻报道类', '?knowledges=2000113'], ['历史文化类', '?knowledges=2000114'], ['其他题材', '?knowledges=2000115']]], ['考查类型', [['细节理解', '?knowledges=2000116'], ['推理判断', '?knowledges=2000117'], ['猜测词义', '?knowledges=2000118'], ['观点态度', '?knowledges=2000119'], ['文章结构', '?knowledges=2000120'], ['主旨大意', '?knowledges=2000121'], ['段落大意', '?knowledges=2000122'], ['客观事实', '?knowledges=2000123'], ['标题选择', '?knowledges=2000124'], ['数字计算', '?knowledges=2000125'], ['其他考查类型', '?knowledges=2000126']]]]], ['完形填空', [['完形体裁', [['记叙文', '?knowledges=2000127'], ['应用文', '?knowledges=2000128'], ['说明文', '?knowledges=2000129'], ['议论文', '?knowledges=2000130'], ['夹叙夹议文', '?knowledges=2000131'], ['其他体裁', '?knowledges=2000132']]], ['完形题材', [['日常生活类', '?knowledges=2000133'], ['人生百味类', '?knowledges=2000134'], ['科普环保类', '?knowledges=2000135'], ['政治经济文化类', '?knowledges=2000136'], ['人物传记/故事阅读类', '?knowledges=2000137'], ['教育类', '?knowledges=2000138'], ['广告布告类', '?knowledges=2000139'], ['健康保健类', '?knowledges=2000140'], ['社会现象类', '?knowledges=2000141'], ['新闻报道类', '?knowledges=2000142'], ['社会历史类', '?knowledges=2000143'], ['其他题材', '?knowledges=2000144']]], ['完形考察类型', [['固定句型', '?knowledges=2000145'], ['基础语法', '?knowledges=2000146'], ['固定搭配', '?knowledges=2000147'], ['习惯表达', '?knowledges=2000148'], ['词义辨析', '?knowledges=2000149'], ['短语辨析', '?knowledges=2000150'], ['逻辑推理', '?knowledges=2000151'], ['客观事实', '?knowledges=2000152'], ['其他考查类型', '?knowledges=2000153']]]]], ['听力', [['听力', [['单词', '?knowledges=2000154'], ['短语 ', '?knowledges=2000155'], ['句子', '?knowledges=2000156'], ['对话', '?knowledges=2000157'], ['短文', '?knowledges=2000158']]]]], ['翻译', [['翻译', [['汉译英', '?knowledges=2000159'], ['英译汉', '?knowledges=2000160']]]]], ['写作', [['写作', [['提纲作文', '?knowledges=2000161'], ['图表作文', '?knowledges=2000162'], ['话题作文', '?knowledges=2000163'], ['图画作文', '?knowledges=2000164'], ['应用文作文', '?knowledges=2000165'], ['命题作文', '?knowledges=2000166']]]]], ['其他题型', [['其他题型', [['判断正误', '?knowledges=2000167'], ['补全对话/句子', '?knowledges=2000168'], ['短文填空', '?knowledges=2000169'], ['连词造句/单词造句', '?knowledges=2000170'], ['问答题', '?knowledges=2000171'], ['任务型阅读', '?knowledges=2000172'], ['句型转换', '?knowledges=2000173'], ['语法填空', '?knowledges=2000174'], ['课文内容', '?knowledges=2000175'], ['单词拼写/填空', '?knowledges=2000176'], ['信息匹配', '?knowledges=2000177'], ['情景交际', '?knowledges=2000178'], ['短语拼写', '?knowledges=2000179']]]]]];
+          	 let data=[
+			              //一级节点
+			              {
+			                //一级节点名字
+			                "name": "全部页面",
+			                "children": [
+			                              //二级节点
+			                              {
+			                                //二级节点名字
+			                                "name": "财务",
+			                                "children": [
+			                                  {
+			                                    //三级节点
+			                                    "name": "999"
+			                                  }
+			                                ]
+			                              },
+			                              //二级节点
+			                              {
+			                                //二级节点名字
+			                                "name": "物料",
+			                                "children": [
+			                                  {
+			                                    //三级节点
+			                                    "name": "777"
+			                                  }
+			                                ]
+			                              },
+
+			                            ]
+			              }
+			    ]
+        	
+        	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('t(q i=0;i<2.d;i++){r(o 2[i][1]!="w"||o 2[i][0]!="w"){$(".m").l("<9 h=a"+i+" z="+i+" G=G><g>"+2[i][0]+"</g><p A=D></p></9>");$(".a"+i).8("7","4("+5+"/C.3) e-6 0 0,4("+5+"/n.3) 6-y 0 0");$(".a"+(2.d-1)).8("7","E");$(".a"+(2.d-1)).8("7","4("+5+"/B.3) e-6 0 0");$(".L").8("7","4("+5+"/K.3) e-6 0 0,4("+5+"/n.3) 6-y 0 0");t(q j=0;j<2[i][1].d;j++){r(o 2[i][1][0][1]!="w"){$(".m>9").f(i).l("<9 h=b z="+j+"><g>"+2[i][1][j][0]+"</g><p A=D></p></9>");$(".a"+i+" .b").f(j).F("h","b b"+j);$(".a"+i+" .b").8("7","4("+5+"/C.3) e-6 0 0,4("+5+"/n.3) 6-y J 0");$(".a"+i+" .b").f(2[i][1].d-1).8("7","E");$(".a"+i+" .b").f(2[i][1].d-1).8("7","4("+5+"/B.3) e-6 0 0");t(q k=0;k<2[i][1][j][1].d;k++){$(".a"+i+" .b").f(j).l("<9 h=c><a x="+2[i][1][j][1][k][1]+">"+2[i][1][j][1][k][0]+"</a></9>");$(".a"+i+" .b"+j+" .c").f(k).F("h","c c"+k);r(k<2[i][1][j][1].d-1){$(".a"+i+" .b"+j+" .c"+k).8("7","4("+5+"/v.3) e-6 0 0")}u{$(".a"+i+" .b"+j+" .c").f(2[i][1][j][1].d-1).8("7","4("+5+"/I.3) e-6 0 0")}}}u{$(".m>9").f(i).l("<9 h=s><a x="+2[i][1][j][1]+"><g>"+2[i][1][j][0]+"</g></9>");$(".s").8("7","4("+5+"/v.3) e-6 0 0");$(".a"+i+" .s").f(2[i][1].d-1).8("7","4("+5+"/I.3) e-6 0 0")}}}u{$(".m").l("<9 h=H><a x="+2[i][1]+"><g>"+2[i][0]+"</g></a></9>");$(".H").8("7","4("+5+"/v.3) e-6 M 0")}}',49,49,'||arr|png|url|winxin_img|repeat|background|css|div||||length|no|eq|span|class||||append|sidebar_content|xuxian|typeof||var|if|bb|for|else|di|string|href||index|id|jiaend|jia11|xialab|none|attr|aaa|aa|diend|7px|jia22|a0|3px'.split('|'),0,{}))
+        	
+        eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('$(".s>b>E,.s>b>p").A("w",x(){d($(2).3().g("b").8("q")=="m"){$(2).3().g("b").t("n");d($(2).3().l("i")=="r"){$(2).3().8("9","4("+7+"/z.6) c-5 0 0,4("+7+"/k.6) 5-y j 0")}h d($(2).3().l("i")=="a"+(e.f-1)){$(".a"+(e.f-1)).8("9","m");$(".a"+(e.f-1)).8("9","4("+7+"/u.6) c-5 0 0")}h{$(2).3().8("9","4("+7+"/v.6) c-5 0 0,4("+7+"/k.6) 5-y j 0")}}h d($(2).3().g("b").8("q")=="B"){$(2).3().g("b").o("n");$(2).3().8("9","4("+7+"/F.6) c-5 0 0,4("+7+"/k.6) 5-y j 0");d($(2).3().l("i")=="r"){$(2).3().8("9","4("+7+"/D.6) c-5 0 0,4("+7+"/k.6) 5-y j 0")}h d($(2).3().l("i")=="a"+(e.f-1)){$(".a"+(e.f-1)).8("9","m");$(".a"+(e.f-1)).8("9","4("+7+"/C.6) c-5 0 0")}}h{$(2).3().g("b").o("n")}})',42,42,'||this|parent|url|repeat|png|winxin_img|css|background||div|no|if|arr|length|children|else|class|5px|xuxian|attr|none|fast|slideUp||display|a0|sidebar_content|slideDown|jianend|jian11|click|function||jian22|on|block|jiaend|jia22|span|jia11'.split('|'),0,{}))
+
+        eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('$(".o>4>4>w,.o>4>4>p").v(x(r){h($(3).2().d("4").7("q")=="k"){$(3).2().d("4").z("m");l.j($(3).2().5("6"));l.j(g[$(3).2().2().5("6")][1].f-1);l.j($(3).2().5("6")==(g[$(3).2().2().5("6")][1].f-1));h($(3).2().5("6")==(g[$(3).2().2().5("6")][1].f-1)){$(3).2().7("c","k");$(3).2().7("c","b("+a+"/C.9) e-8 0 0")}i{$(3).2().7("c","b("+a+"/D.9) e-8 0 0,b("+a+"/s.9) 8-y n 0")}}i h($(3).2().d("4").7("q")=="A"){$(3).2().d("4").u("m");h($(3).2().5("6")==(g[$(3).2().2().5("6")][1].f-1)){$(3).2().7("c","k");$(3).2().7("c","b("+a+"/t.9) e-8 0 0")}i{$(3).2().7("c","b("+a+"/t.9) e-8 0 0,b("+a+"/s.9) 8-y n 0")}}i{$(3).2().d("4").u("m")}r.B()})',40,40,'||parent|this|div|attr|index|css|repeat|png|winxin_img|url|background|children|no|length|arr|if|else|log|none|console|fast|7px|sidebar_content||display|event|xuxian|jiaend|slideUp|click|span|function||slideDown|block|stopPropagation|jianend|jian11'.split('|'),0,{}))
+
+		    $(".sidebar_content>div>div>div").click( function(event) {
+		       
+		        event.stopPropagation();
+		    })
+		  	var aa=window.location.search;
+		  	// $(".sidebar_content a").each(function(){
+		  	// 	$(this).css("background-color","red");
+		  	// 	if(aa.indexOf($(this).attr("href"))!=-1){
+		  	// 		$(this).css("background-color","red");
+		  	// 		$(this).parent().slideDown("fast");
+		  	// 		$(this).parent().parent().slideDown("fast");
+		  	// 		$(this).parent().parent().siblings().slideDown("fast");
+		  	// 		$(this).parent().siblings().slideDown("fast");
+		  	// 	}
+		  	// })
+		  	$("\x2e\x73\x69\x64\x65\x62\x61\x72\x5f\x63\x6f\x6e\x74\x65\x6e\x74 \x61")["\x65\x61\x63\x68"](function(){		  		$(this)["\x63\x73\x73"]("\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72","\x72\x65\x64");		  		if(aa["\x69\x6e\x64\x65\x78\x4f\x66"]($(this)["\x61\x74\x74\x72"]("\x68\x72\x65\x66"))!=-1){		  			$(this)["\x63\x73\x73"]("\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72","\x72\x65\x64");		  			$(this)["\x70\x61\x72\x65\x6e\x74"]()["\x73\x6c\x69\x64\x65\x44\x6f\x77\x6e"]("\x66\x61\x73\x74");		  			$(this)["\x70\x61\x72\x65\x6e\x74"]()["\x70\x61\x72\x65\x6e\x74"]()["\x73\x6c\x69\x64\x65\x44\x6f\x77\x6e"]("\x66\x61\x73\x74");		  			$(this)["\x70\x61\x72\x65\x6e\x74"]()["\x70\x61\x72\x65\x6e\x74"]()["\x73\x69\x62\x6c\x69\x6e\x67\x73"]()["\x73\x6c\x69\x64\x65\x44\x6f\x77\x6e"]("\x66\x61\x73\x74");		  			$(this)["\x70\x61\x72\x65\x6e\x74"]()["\x73\x69\x62\x6c\x69\x6e\x67\x73"]()["\x73\x6c\x69\x64\x65\x44\x6f\x77\x6e"]("\x66\x61\x73\x74");		  		}		  	})
+		  	// var bbb=encodeURI($(".sidebar_content a").each(function(){
+		  	// 	$(this).css("background-color","red");
+		  	// 	if(aa.indexOf($(this).attr("href"))!=-1){
+		  	// 		$(this).css("background-color","red");
+		  	// 		$(this).parent().slideDown("fast");
+		  	// 		$(this).parent().parent().slideDown("fast");
+		  	// 		$(this).parent().parent().siblings().slideDown("fast");
+		  	// 		$(this).parent().siblings().slideDown("fast");
+		  	// 	}
+		  	// }))
+		  	// console.log(bbb)
+		  	// eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('$(".g a").d(e(){$(0).6("5-7","9");b(c.h($(0).i("f"))!=-1){$(0).6("5-7","9");$(0).2().4("3");$(0).2().2().4("3");$(0).2().2().8().4("3");$(0).2().8().4("3")}})',19,19,'this||parent|fast|slideDown|background|css|color|siblings|red||if|aa|each|function|href|sidebar_content|indexOf|attr'.split('|'),0,{}))
+
+        })
+    </script>
+</head>
+<body>
+	<div class="sidebar_back">
+		<div class="sidebar_head"></div>
+		<div class="sidebar_head2">	</div>
+		<div class="sidebar_left">
+			<div class="sidebar_title">知识点选择</div>
+			<div class="sidebar_content"></div>
+		</div>
+		<div class="sidebar_right"></div>
+		<div style="clear:both;">	</div>
+		<div class="sidebar_foot">	</div>
+	</div>
+</body>
+</html>
